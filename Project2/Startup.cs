@@ -10,6 +10,8 @@ namespace Project2
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "MyAllowSpecificOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -20,6 +22,18 @@ namespace Project2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://locahost:4202")
+                                      .AllowAnyMethod()
+                                      .AllowCredentials()
+                                      .SetIsOriginAllowed((host) => true)
+                                      .AllowAnyHeader();
+                                  });
+            });
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -51,11 +65,15 @@ namespace Project2
 
             app.UseRouting();
 
+            app.UseCors(MyAllowSpecificOrigins);
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
+
+                endpoints.MapControllers().RequireCors(MyAllowSpecificOrigins);
             });
 
             app.UseSpa(spa =>

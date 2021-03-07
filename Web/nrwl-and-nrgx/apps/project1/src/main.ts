@@ -8,8 +8,14 @@ export function getBaseUrl() {
   return document.getElementsByTagName('base')[0].href;
 }
 
+// just to get the thing working...
+export function getBaseApiUrl() {
+  return 'https://localhost:5003/'
+}
+
 const providers = [
-  { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] }
+  { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] },
+  { provide: 'BASE_API_URL', useFactory: getBaseApiUrl, deps: [] }
 ];
 
 if (environment.production) {
