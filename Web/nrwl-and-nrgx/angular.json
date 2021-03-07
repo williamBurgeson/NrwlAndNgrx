@@ -51,9 +51,7 @@
               "apps/nrwl-and-ngrx/src/favicon.ico",
               "apps/nrwl-and-ngrx/src/assets"
             ],
-            "styles": [
-              "apps/nrwl-and-ngrx/src/styles.scss"
-            ],
+            "styles": ["apps/nrwl-and-ngrx/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -380,6 +378,31 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/project2-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "frontend-infrastructure": {
+      "projectType": "library",
+      "root": "libs/frontend-infrastructure",
+      "sourceRoot": "libs/frontend-infrastructure/src",
+      "prefix": "nrwl-and-nrgx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/frontend-infrastructure/src/**/*.ts",
+              "libs/frontend-infrastructure/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/frontend-infrastructure"],
+          "options": {
+            "jestConfig": "libs/frontend-infrastructure/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

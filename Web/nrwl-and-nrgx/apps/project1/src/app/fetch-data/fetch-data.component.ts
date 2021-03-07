@@ -1,23 +1,18 @@
-import { Component, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component,  OnInit } from '@angular/core';
+import { WeatherForecastModel, WeatherForecastService } from '@nrwl-and-nrgx/frontend-infrastructure';
 
 @Component({
   selector: 'app-fetch-data',
   templateUrl: './fetch-data.component.html'
 })
-export class FetchDataComponent {
-  public forecasts: WeatherForecast[];
+export class FetchDataComponent implements OnInit {
+  public forecasts: WeatherForecastModel[];
 
-  constructor(http: HttpClient, @Inject('BASE_API_URL') baseApiUrl: string) {
-    http.get<WeatherForecast[]>(baseApiUrl + 'weatherforecast').subscribe(result => {
+  constructor(private readonly _weatherForecastService: WeatherForecastService) {  }
+
+  ngOnInit(): void {
+    this._weatherForecastService.getWeatherForecast().subscribe(result => {
       this.forecasts = result;
     }, error => console.error(error));
   }
-}
-
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
 }

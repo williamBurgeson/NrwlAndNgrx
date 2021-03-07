@@ -24,6 +24,7 @@
     "project1": { "tags": [] },
     "project1-e2e": { "tags": [], "implicitDependencies": ["project1"] },
     "project2": { "tags": [] },
-    "project2-e2e": { "tags": [], "implicitDependencies": ["project2"] }
+    "project2-e2e": { "tags": [], "implicitDependencies": ["project2"] },
+    "frontend-infrastructure": { "tags": [] }
   }
 }
