@@ -51,7 +51,9 @@
               "apps/nrwl-and-ngrx/src/favicon.ico",
               "apps/nrwl-and-ngrx/src/assets"
             ],
-            "styles": ["apps/nrwl-and-ngrx/src/styles.scss"],
+            "styles": [
+              "apps/nrwl-and-ngrx/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -165,7 +167,10 @@
               "apps/project1/src/favicon.ico",
               "apps/project1/src/assets"
             ],
-            "styles": ["apps/project1/src/styles.scss"],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "apps/project1/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
