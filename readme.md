@@ -1,8 +1,8 @@
 Step 1: Create sln and Project1 & Project2 via `dotnet new angular` cli command 
 
-Step 2: Add nx workspace using nx create-nx-workspace cli command
+Step 2: Add nx workspace using `nx create-nx-workspace cli` command
 
-Step 3: Add new Project1 and Project2 apps to workspace (nx g @nrwl/angular:app [project name]) 
+Step 3: Add new Project1 and Project2 apps to workspace (`nx g @nrwl/angular:app [project name]`) 
 
 Step 4: Amend nrwl Project1 to visually match .net Project1, and then do the same with Project2
 
