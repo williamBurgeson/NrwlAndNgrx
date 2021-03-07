@@ -284,7 +284,10 @@
               "apps/project2/src/favicon.ico",
               "apps/project2/src/assets"
             ],
-            "styles": ["apps/project2/src/styles.scss"],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "apps/project2/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
