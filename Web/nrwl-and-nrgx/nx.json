@@ -25,6 +25,8 @@
     "project1-e2e": { "tags": [], "implicitDependencies": ["project1"] },
     "project2": { "tags": [] },
     "project2-e2e": { "tags": [], "implicitDependencies": ["project2"] },
-    "frontend-infrastructure": { "tags": [] }
+    "frontend-infrastructure": { "tags": [] },
+    "ng-rx-proj": { "tags": [] },
+    "ng-rx-proj-e2e": { "tags": [], "implicitDependencies": ["ng-rx-proj"] }
   }
 }

@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/apps/project1',
     '<rootDir>/apps/project2',
     '<rootDir>/libs/frontend-infrastructure',
+    '<rootDir>/apps/ng-rx-proj',
   ],
 };
